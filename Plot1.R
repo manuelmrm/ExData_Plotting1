@@ -1,0 +1,7 @@
+#Plot 1
+> data <- read.csv("~/Documents/Exploratory Data Analysis/household_power_consumption.txt", sep=";", na.strings="?")
+> data$Date <- as.Date(data$Date, format="%d/%m/%Y")
+> data <- subset(data, subset=(Date >= "2007-02-01" & Date <= "2007-02-02"))
+> png(filename="Plot1.png", width=480, height=480)
+> hist(data$Global_active_power, col="red", xlab="GLobal Active Power (kilowatts)", main="Global Active Power")
+> dev.off()
